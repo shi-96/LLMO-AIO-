@@ -1,0 +1,165 @@
+/* ===========================================================
+   デザイントークン（Linear型）
+   BOSS案件 共通デザイン指示書 v1.0 / 2026-09-05
+
+   ここに書いた値が「正本」。
+   ページ側では生の色コード・生のpx値を書かず、必ず var(--...) を使う。
+   =========================================================== */
+
+:root {
+  /* --- 1. 色：面（背景）--------------------------------------
+     Linear型は「黒」ではなく「青みのある濃いグレー」を使う。
+     真っ黒(#000)は影が乗らず、階層が消えるので使わない。 */
+  --bg-base:        #08090a;   /* 一番奥。ページ全体の地 */
+  --bg-surface:     #0f1011;   /* カード・パネルの面 */
+  --bg-elevated:    #16171a;   /* 浮いている面（メニュー・モーダル） */
+  --bg-inset:       #050506;   /* へこんだ面（入力欄・コード） */
+  --bg-hover:       rgba(255, 255, 255, 0.045);
+  --bg-active:      rgba(255, 255, 255, 0.075);
+
+  /* --- 2. 色：線 ---------------------------------------------
+     線は色ではなく「白の透過」で作る。面の明るさが変わっても破綻しない。 */
+  --border-subtle:  rgba(255, 255, 255, 0.06);  /* 区切りの既定 */
+  --border-default: rgba(255, 255, 255, 0.10);  /* カードの外周 */
+  --border-strong:  rgba(255, 255, 255, 0.16);  /* 強調・フォーカス前 */
+
+  /* --- 3. 色：文字 -------------------------------------------
+     4段階だけ。これ以上増やすと使い分けが崩れる。 */
+  --text-primary:   #f7f8f8;   /* 見出し・本文の主 */
+  --text-secondary: #8a8f98;   /* 説明・補足 */
+  --text-tertiary:  #62666d;   /* ラベル・注記 */
+  --text-disabled:  #3c4043;
+
+  /* --- 4. 色：アクセント -------------------------------------
+     Linear型の要。彩度を上げすぎない青紫を1色だけ主役にする。
+     複数の原色を混ぜると一気に「よくある管理画面」になる。 */
+  --accent:         #5e6ad2;
+  --accent-hover:   #6e79d6;
+  --accent-active:  #4f5abd;
+  --accent-subtle:  rgba(94, 106, 210, 0.14);   /* 選択中の行の地 */
+  --accent-text:    #a4aeff;                    /* 濃い地の上のリンク色 */
+
+  /* --- 5. 色：状態 -------------------------------------------
+     状態色は「点」でしか使わない。面を塗らない。 */
+  --success:        #4cb782;
+  --warning:        #f2c94c;
+  --danger:         #eb5757;
+  --info:           #5e6ad2;
+
+  /* --- 6. 文字 -----------------------------------------------
+     日本語は Inter に無いので、必ず和文フォントを後ろに繋ぐ。
+     ここを抜くと Windows で MS Pゴシックが出て別物になる。 */
+  --font-sans:
+    "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    "Hiragino Sans", "Hiragino Kaku Gothic ProN",
+    "Noto Sans JP", "Yu Gothic UI", Meiryo, sans-serif;
+  --font-mono:
+    "SF Mono", "JetBrains Mono", Menlo, Consolas,
+    "Noto Sans Mono CJK JP", monospace;
+
+  /* 文字サイズ：1.0倍→1.125倍の緩い階段。飛ばさずに使う。 */
+  --text-xs:   11px;
+  --text-sm:   12px;
+  --text-base: 14px;   /* 本文の既定。16pxではない。ここがLinear型の特徴 */
+  --text-md:   15px;
+  --text-lg:   17px;
+  --text-xl:   21px;
+  --text-2xl:  26px;
+  --text-3xl:  32px;
+  --text-4xl:  40px;
+
+  --weight-normal:   400;
+  --weight-medium:   510;  /* Linear型は500ではなく510前後を使う */
+  --weight-semibold: 590;
+  --weight-bold:     680;
+
+  /* 行間：見出しは詰める、本文は空ける。日本語は欧文より広めに取る。 */
+  --leading-tight:   1.25;
+  --leading-snug:    1.4;
+  --leading-normal:  1.7;   /* 和文本文の既定 */
+
+  /* 字間：見出しだけ詰める。本文の日本語は詰めない（読みにくくなる） */
+  --tracking-tight:  -0.022em;
+  --tracking-normal: 0;
+
+  /* --- 7. 余白：4pxの倍数だけ --------------------------------
+     「なんとなく13px」を禁止するためにトークン化している。 */
+  --space-1:  4px;
+  --space-2:  8px;
+  --space-3:  12px;
+  --space-4:  16px;
+  --space-5:  20px;
+  --space-6:  24px;
+  --space-8:  32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-20: 80px;
+  --space-24: 96px;
+
+  /* --- 8. 角丸：小さく。丸すぎると「かわいい」側に寄る --------- */
+  --radius-sm:   4px;
+  --radius-md:   6px;   /* ボタン・入力欄の既定 */
+  --radius-lg:   8px;   /* カードの既定 */
+  --radius-xl:   12px;
+  --radius-full: 9999px;
+
+  /* --- 9. 影：ほぼ使わない。使うときは黒を薄く重ねる ----------- */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.32);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.40);
+  --shadow-lg: 0 12px 32px rgba(0, 0, 0, 0.48);
+
+  /* 縁の光：Linear型の「質感」はほぼこれ1つで出る。
+     面の上辺にだけ白を1px乗せて、光が当たっているように見せる。 */
+  --ring-inset: inset 0 1px 0 rgba(255, 255, 255, 0.05);
+
+  /* --- 10. 動き：速く、短く ------------------------------------
+     200msを超えると「もたつく」。150ms前後に揃える。 */
+  --ease-out:   cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-inout: cubic-bezier(0.4, 0, 0.2, 1);
+  --duration-fast:   100ms;
+  --duration-normal: 150ms;
+  --duration-slow:   250ms;
+
+  /* --- 11. 版面 ----------------------------------------------- */
+  --width-text:      680px;   /* 読み物の最大幅 */
+  --width-content:   1024px;  /* 通常のページ */
+  --width-wide:      1280px;  /* 一覧・ダッシュボード */
+  --header-height:   56px;
+
+  --z-dropdown: 100;
+  --z-sticky:   200;
+  --z-modal:    300;
+  --z-toast:    400;
+}
+
+/* ===========================================================
+   明るい面（ライトテーマ）
+   営業資料を印刷する・スクリーンショットを白背景で貼る場合に使う。
+   色の「役割」は変えず、値だけ入れ替える。
+   =========================================================== */
+:root[data-theme="light"] {
+  --bg-base:        #ffffff;
+  --bg-surface:     #fbfbfb;
+  --bg-elevated:    #ffffff;
+  --bg-inset:       #f4f5f8;
+  --bg-hover:       rgba(0, 0, 0, 0.035);
+  --bg-active:      rgba(0, 0, 0, 0.06);
+
+  --border-subtle:  rgba(0, 0, 0, 0.06);
+  --border-default: rgba(0, 0, 0, 0.10);
+  --border-strong:  rgba(0, 0, 0, 0.18);
+
+  --text-primary:   #08090a;
+  --text-secondary: #6b6f76;
+  --text-tertiary:  #8a8f98;
+  --text-disabled:  #b8bcc2;
+
+  --accent-text:    #4f5abd;
+  --accent-subtle:  rgba(94, 106, 210, 0.10);
+
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.06);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0 12px 32px rgba(0, 0, 0, 0.12);
+  --ring-inset: inset 0 1px 0 rgba(255, 255, 255, 0.8);
+}

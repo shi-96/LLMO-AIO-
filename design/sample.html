@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>デザイン指示書｜見本ページ（Linear型）</title>
+<link rel="stylesheet" href="tokens.css">
+<link rel="stylesheet" href="components.css">
+</head>
+<body>
+
+<div class="hero">
+  <div class="container">
+    <p class="eyebrow">BOSS 共通デザイン指示書 v1.0</p>
+    <h1>作るたびに見た目が変わるのを、やめる</h1>
+    <p class="lead">
+      色も余白も文字の大きさも、決まった値から選ぶだけにしました。
+      このページに出ているものが、そのまま使える部品の全部です。
+    </p>
+    <div class="row">
+      <button class="btn btn--primary">この型で作る</button>
+      <button class="btn btn--secondary">指示書を読む</button>
+    </div>
+  </div>
+</div>
+
+<div class="container section stack-8">
+
+  <section class="stack">
+    <h2>1. 色</h2>
+    <p>面は3段階、線は3段階、文字は4段階。アクセントは1色だけ。これ以上は増やしません。</p>
+    <div class="grid">
+      <div class="card">
+        <div class="card__title">面（背景）</div>
+        <div class="card__body">一番奥・カードの面・浮いている面の3つ。真っ黒は使わず、青みのある濃いグレーを使います。</div>
+      </div>
+      <div class="card">
+        <div class="card__title">線</div>
+        <div class="card__body">色ではなく白の透過で引きます。面の明るさが変わっても破綻しません。</div>
+      </div>
+      <div class="card">
+        <div class="card__title">アクセント</div>
+        <div class="card__body">彩度を上げすぎない青紫を1色。複数の原色を混ぜると、よくある管理画面になります。</div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <section class="stack">
+    <h2>2. ボタン</h2>
+    <p>主・副・三の3種類だけ。主のボタンは1画面に1つまで。2つ置くと、どちらも主でなくなります。</p>
+    <div class="row">
+      <button class="btn btn--primary">申し込む（主）</button>
+      <button class="btn btn--secondary">資料を見る（副）</button>
+      <button class="btn btn--ghost">あとで（三）</button>
+      <button class="btn btn--secondary btn--sm">小さい方</button>
+      <button class="btn btn--primary" disabled>押せない状態</button>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <section class="stack">
+    <h2>3. 小さなラベル</h2>
+    <p>状態の色は、文字と線にだけ乗せます。面を塗りつぶしません。</p>
+    <div class="row">
+      <span class="badge">未着手</span>
+      <span class="badge badge--accent">進行中</span>
+      <span class="badge badge--success">完了</span>
+      <span class="badge badge--warning">確認待ち</span>
+      <span class="badge badge--danger">停止</span>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <section class="stack">
+    <h2>4. 入力欄</h2>
+    <div class="stack-2" style="max-width:360px">
+      <div>
+        <label class="label" for="s1">会社名</label>
+        <input class="input" id="s1" type="text" placeholder="株式会社◯◯">
+      </div>
+      <div>
+        <label class="label" for="s2">ご連絡先</label>
+        <input class="input" id="s2" type="email" placeholder="name@example.com">
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <section class="stack">
+    <h2>5. 表</h2>
+    <p>縦線は引かず、横線だけで区切ります。横に長い表は、この箱の中だけで横に流します。</p>
+    <div class="table-wrap">
+      <table class="table">
+        <thead>
+          <tr><th>項目</th><th>決めた値</th><th>使う場所</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>本文の文字</td><td>14px</td><td>すべての本文。16pxではありません</td></tr>
+          <tr><td>余白</td><td>4pxの倍数のみ</td><td>なんとなくの13pxを禁止するため</td></tr>
+          <tr><td>角丸</td><td>6px（部品）／8px（カード）</td><td>丸すぎると、かわいい側に寄ります</td></tr>
+          <tr><td>動きの速さ</td><td>150ms前後</td><td>200msを超えると、もたつきます</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <section class="stack">
+    <h2>6. カード</h2>
+    <p>影ではなく、1pxの線と上辺の光で浮かせます。触っても位置は動かしません。</p>
+    <div class="grid">
+      <div class="card card--interactive">
+        <div class="card__title">押せるカード</div>
+        <div class="card__body">触ると線が明るくなります。浮き上がりません。</div>
+      </div>
+      <div class="card">
+        <div class="card__title">ただのカード</div>
+        <div class="card__body">押せないものには、触ったときの変化を付けません。</div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <section class="stack">
+    <p class="caption">
+      このページは design/tokens.css と design/components.css だけで出来ています。
+      新しいページを作るときは、この2つを読み込んで、ここに出ている部品だけで組んでください。
+    </p>
+  </section>
+
+</div>
+
+</body>
+</html>
