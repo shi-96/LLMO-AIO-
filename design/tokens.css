@@ -137,7 +137,42 @@
    明るい面（ライトテーマ）
    営業資料を印刷する・スクリーンショットを白背景で貼る場合に使う。
    色の「役割」は変えず、値だけ入れ替える。
+
+   切り替わり方は2通り。
+   ①端末が明るい設定で、ページ側で何も指定していないとき（下の@media）
+   ②<html data-theme="light"> を明示したとき（その下のブロック）
+   この型は暗い面が既定なので、@media 側は data-theme="dark" が
+   指定されていないときだけ効くようにしている。
    =========================================================== */
+
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme="dark"]) {
+    --bg-base:        #ffffff;
+    --bg-surface:     #fbfbfb;
+    --bg-elevated:    #ffffff;
+    --bg-inset:       #f4f5f8;
+    --bg-hover:       rgba(0, 0, 0, 0.035);
+    --bg-active:      rgba(0, 0, 0, 0.06);
+
+    --border-subtle:  rgba(0, 0, 0, 0.06);
+    --border-default: rgba(0, 0, 0, 0.10);
+    --border-strong:  rgba(0, 0, 0, 0.18);
+
+    --text-primary:   #08090a;
+    --text-secondary: #6b6f76;
+    --text-tertiary:  #8a8f98;
+    --text-disabled:  #b8bcc2;
+
+    --accent-text:    #4f5abd;
+    --accent-subtle:  rgba(94, 106, 210, 0.10);
+
+    --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.06);
+    --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.08);
+    --shadow-lg: 0 12px 32px rgba(0, 0, 0, 0.12);
+    --ring-inset: inset 0 1px 0 rgba(255, 255, 255, 0.8);
+  }
+}
+
 :root[data-theme="light"] {
   --bg-base:        #ffffff;
   --bg-surface:     #fbfbfb;
