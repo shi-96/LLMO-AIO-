@@ -55,6 +55,20 @@
             font-weight: bold;
         }
         .footer { text-align: center; color: var(--text-dim); padding: 40px; font-size: 0.9rem; }
+        .plans { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+        .plan { background: #21262d; padding: 20px; border-radius: 8px; }
+        blockquote {
+            border-left: 3px solid var(--accent-color);
+            margin: 20px 0 0;
+            padding: 5px 0 5px 15px;
+            color: var(--text-dim);
+        }
+        @media (max-width: 700px) {
+            h1 { font-size: 1.9rem; }
+            .card { padding: 20px; }
+            .plans { grid-template-columns: 1fr; }
+            table { display: block; overflow-x: auto; }
+        }
         .badge {
             display: inline-block;
             background: #238636;
@@ -108,13 +122,13 @@
 
     <section class="card">
         <h2>3. 導入プランのご提案</h2>
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
-            <div style="background: #21262d; padding: 20px; border-radius: 8px;">
+        <div class="plans">
+            <div class="plan">
                 <h3>スポット診断プラン</h3>
                 <p>現在のAI引用状況を調査し、改善レポートを提出します。</p>
                 <p class="price-tag">200,000円〜</p>
             </div>
-            <div style="background: #21262d; padding: 20px; border-radius: 8px;">
+            <div class="plan">
                 <h3>継続運用プラン</h3>
                 <p>月次のAIOモニタリングと、AI向けコンテンツの自動更新。</p>
                 <p class="price-tag">月額 300,000円〜</p>
