@@ -270,6 +270,9 @@ a:hover { color: var(--text-primary); }
   width: 100%;
   border-collapse: collapse;
   font-size: var(--text-base);
+  /* 狭い画面で列が潰れ、1〜2文字ずつ折り返すのを防ぐ。
+     これより狭くなったら縮めずに .table-wrap の中で横に流す。 */
+  min-width: 480px;
 }
 
 .table th {
