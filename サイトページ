@@ -1,139 +1,167 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>次世代AI集客戦略：LLMO/AIO最適化のご提案</title>
-    <style>
-        :root {
-            --bg-color: #0a0e14;
-            --card-bg: #161b22;
-            --accent-color: #58a6ff;
-            --text-main: #c9d1d9;
-            --text-dim: #8b949e;
-            --success: #3fb950;
-        }
-        body {
-            font-family: 'Helvetica Neue', Arial, sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-main);
-            line-height: 1.6;
-            margin: 0;
-            padding: 0;
-        }
-        header {
-            background: linear-gradient(135deg, #161b22 0%, #0d1117 100%);
-            padding: 60px 20px;
-            text-align: center;
-            border-bottom: 1px solid #30363d;
-        }
-        h1 { color: var(--accent-color); font-size: 2.5rem; margin-bottom: 10px; }
-        .container { max-width: 900px; margin: 0 auto; padding: 40px 20px; }
-        .card {
-            background: var(--card-bg);
-            border: 1px solid #30363d;
-            border-radius: 12px;
-            padding: 30px;
-            margin-bottom: 30px;
-        }
-        h2 { border-left: 4px solid var(--accent-color); padding-left: 15px; font-size: 1.8rem; }
-        .highlight { color: var(--accent-color); font-weight: bold; }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 20px;
-        }
-        th, td {
-            text-align: left;
-            padding: 15px;
-            border-bottom: 1px solid #30363d;
-        }
-        th { background: #21262d; color: var(--accent-color); }
-        .price-tag {
-            font-size: 1.4rem;
-            color: var(--success);
-            font-weight: bold;
-        }
-        .footer { text-align: center; color: var(--text-dim); padding: 40px; font-size: 0.9rem; }
-        .badge {
-            display: inline-block;
-            background: #238636;
-            color: white;
-            padding: 4px 12px;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            margin-bottom: 10px;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>次世代AI集客戦略：LLMO/AIO最適化のご提案</title>
+<link rel="stylesheet" href="design/tokens.css">
+<link rel="stylesheet" href="design/components.css">
+<style>
+  /* このページ固有の調整だけをここに書く。
+     色・余白・文字サイズは design/tokens.css の値を使い、生の値を書かない。 */
+
+  .plan-grid {
+    display: grid;
+    gap: var(--space-4);
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  }
+
+  .plan__price {
+    margin-top: var(--space-4);
+    font-size: var(--text-xl);
+    font-weight: var(--weight-semibold);
+    color: var(--text-primary);
+    letter-spacing: var(--tracking-tight);
+  }
+
+  /* 引用は色を足さず、左の線1本だけで示す */
+  .quote {
+    margin: 0;
+    padding-left: var(--space-5);
+    border-left: 2px solid var(--border-strong);
+    color: var(--text-secondary);
+    font-size: var(--text-md);
+  }
+
+  .compare {
+    display: grid;
+    gap: var(--space-4);
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  }
+
+  .compare__term {
+    font-size: var(--text-sm);
+    font-weight: var(--weight-medium);
+    color: var(--text-tertiary);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    margin-bottom: var(--space-2);
+  }
+</style>
 </head>
 <body>
 
-<header>
-    <div class="badge">2026年最新戦略</div>
-    <h1>AI回答を独占する「LLMO/AIO」最適化戦略</h1>
-    <p>Google検索の次は、AIによる「指名獲得」の時代へ</p>
-</header>
-
-<div class="container">
-    <section class="card">
-        <h2>1. 検索革命：なぜSEOだけでは不十分なのか？</h2>
-        <p>今、ユーザーは「検索」から「AIへの質問」へ移行しています。GoogleのAI OverviewsやChatGPT、Geminiがあなたの会社を<span class="highlight">「おすすめ」として紹介するかどうか</span>が、売上を左右する決定的な要因です。</p>
-        <ul>
-            <li><strong>SEO:</strong> 検索結果の1ページ目にポスターを貼る。</li>
-            <li><strong>LLMO/AIO:</strong> 物知りなAI先生に「〇〇ならこの人が一番だよ」と指名してもらう。</li>
-        </ul>
-    </section>
-
-    <section class="card">
-        <h2>2. 実装する具体的な「AI対策」</h2>
-        <table>
-            <tr>
-                <th>施策項目</th>
-                <th>期待される効果</th>
-            </tr>
-            <tr>
-                <td><strong>llms.txt の設置</strong></td>
-                <td>AI専用のサイト目次を提供し、学習効率を最大化します。</td>
-            </tr>
-            <tr>
-                <td><strong>構造化データ実装</strong></td>
-                <td>FAQやサービス情報をAIが「正確なデータ」として認識。</td>
-            </tr>
-            <tr>
-                <td><strong>アンサーファースト最適化</strong></td>
-                <td>AIが引用しやすい「結論から始まる文章」へリライト。</td>
-            </tr>
-        </table>
-    </section>
-
-    <section class="card">
-        <h2>3. 導入プランのご提案</h2>
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
-            <div style="background: #21262d; padding: 20px; border-radius: 8px;">
-                <h3>スポット診断プラン</h3>
-                <p>現在のAI引用状況を調査し、改善レポートを提出します。</p>
-                <p class="price-tag">200,000円〜</p>
-            </div>
-            <div style="background: #21262d; padding: 20px; border-radius: 8px;">
-                <h3>継続運用プラン</h3>
-                <p>月次のAIOモニタリングと、AI向けコンテンツの自動更新。</p>
-                <p class="price-tag">月額 300,000円〜</p>
-            </div>
-        </div>
-    </section>
-
-    <section class="card">
-        <h2>4. パートナーシップ：シニアアーキテクトの知見</h2>
-        <p>私は単なるライターではありません。最新のAIモデル（Gemini 3.1 Pro / Flash）の特性を熟知したアーキテクトとして、<span class="highlight">「技術」と「ビジネス」を繋ぐ最適な設計</span>を提供します。</p>
-        <blockquote>
-            「AIに選ばれる企業」になるための第一歩を、今ここから始めましょう。
-        </blockquote>
-    </section>
-
-    <div class="footer">
-        &copy; 2026 AI Strategy Partners. All rights reserved.<br>
-        Presented by シニアAIエンジニア兼システムアーキテクト
+<div class="hero">
+  <div class="container">
+    <span class="badge badge--accent">2026年最新戦略</span>
+    <h1 style="margin-top:var(--space-5)">AI回答を独占する<br>LLMO / AIO 最適化戦略</h1>
+    <p class="lead">Google検索の次は、AIによる「指名獲得」の時代へ。</p>
+    <div class="row">
+      <a class="btn btn--primary" href="#plan">導入プランを見る</a>
+      <a class="btn btn--secondary" href="#measures">施策の中身</a>
     </div>
+  </div>
+</div>
+
+<div class="container section stack-8">
+
+  <section class="stack">
+    <p class="eyebrow">01</p>
+    <h2>検索革命：なぜSEOだけでは不十分なのか</h2>
+    <p>
+      いま、利用者は「検索」から「AIへの質問」へ移っています。
+      GoogleのAI OverviewsやChatGPT、Geminiがあなたの会社を
+      <span class="text-accent">おすすめとして紹介するかどうか</span>が、
+      売上を左右する要因になりました。
+    </p>
+
+    <div class="compare">
+      <div class="card">
+        <div class="compare__term">SEO</div>
+        <div class="card__body">検索結果の1ページ目に、ポスターを貼る。</div>
+      </div>
+      <div class="card">
+        <div class="compare__term">LLMO / AIO</div>
+        <div class="card__body">物知りなAIに「それならこの会社」と指名してもらう。</div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <section class="stack" id="measures">
+    <p class="eyebrow">02</p>
+    <h2>実装する具体的なAI対策</h2>
+    <div class="table-wrap">
+      <table class="table">
+        <thead>
+          <tr><th>施策項目</th><th>期待される効果</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>llms.txt の設置</td>
+            <td>AI向けのサイト目次を提供し、内容を読み取りやすくします。</td>
+          </tr>
+          <tr>
+            <td>構造化データ実装</td>
+            <td>よくある質問やサービス情報を、AIが正確なデータとして認識します。</td>
+          </tr>
+          <tr>
+            <td>アンサーファースト最適化</td>
+            <td>AIが引用しやすい、結論から始まる文章へ書き直します。</td>
+          </tr>
+          <tr>
+            <td>巡回ルールの点検</td>
+            <td>回答に載せる側のボットを誤って止めていないかを設定ファイルで確認します。</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <section class="stack" id="plan">
+    <p class="eyebrow">03</p>
+    <h2>導入プランのご提案</h2>
+    <div class="plan-grid">
+      <div class="card">
+        <div class="card__title">スポット診断プラン</div>
+        <div class="card__body">現在のAI引用状況を調査し、改善レポートを提出します。</div>
+        <div class="plan__price">200,000円〜</div>
+      </div>
+      <div class="card">
+        <div class="card__title">継続運用プラン</div>
+        <div class="card__body">月次のAIOモニタリングと、AI向けコンテンツの更新。</div>
+        <div class="plan__price">月額 300,000円〜</div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <section class="stack">
+    <p class="eyebrow">04</p>
+    <h2>パートナーシップ</h2>
+    <p>
+      単なるライターではありません。最新のAIモデルの特性を踏まえた設計者として、
+      <span class="text-accent">技術とビジネスをつなぐ設計</span>を提供します。
+    </p>
+    <blockquote class="quote">
+      AIに選ばれる企業になるための第一歩を、ここから始めましょう。
+    </blockquote>
+    <div class="row">
+      <a class="btn btn--primary" href="#plan">相談する</a>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <footer class="stack-2">
+    <p class="caption">&copy; 2026 AI Strategy Partners. All rights reserved.</p>
+    <p class="caption">Presented by シニアAIエンジニア兼システムアーキテクト</p>
+  </footer>
+
 </div>
 
 </body>
